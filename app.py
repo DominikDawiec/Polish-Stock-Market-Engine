@@ -67,7 +67,7 @@ if option:
      st.header('Stock Details')
      
      st.write('sector',df.info['sector'])
-     st.write('fullTimeEmployees',df.info['fullTimeEmployees'])
+     st.write('fullTimeEmployees',str(df.info['fullTimeEmployees']))
      st.write('industry',df.info['industry'])
      st.write('website',df.info['website'])
      st.write('longBusinessSummary',df.info['longBusinessSummary'])
@@ -78,6 +78,13 @@ if option:
      st.header('Financials')
      
      st.write(df.financials)
+     st.write(df.balance_sheet)
+     st.write(df.cashflow)
+     
+     ######################################
+     
+     st.header('Performance')
+     
      
      ######################################
      
