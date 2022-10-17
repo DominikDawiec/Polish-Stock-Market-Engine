@@ -1,0 +1,11 @@
+plotly
+streamlit
+streamlit-aggrid
+numpy==1.20.1    
+pandas==1.2.4     
+yfinance   
+matplotlib==3.3.4  
+fred
+fredapi
+xlsxwriter
+pycaret
