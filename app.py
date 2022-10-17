@@ -34,21 +34,26 @@ companies = ('MSFT','GOOG')
 
 option = st.selectbox('Please choose a company', companies)
 
+###############################################################
 
 if option:
      df =  yf.Ticker(option)
+     ###############################################################
      st.header(df.info['longName'])
-     
+     ###############################################################
      hist = df.history(period="max")
+     
+     ###############################################################
      
      fig = go.Figure([go.Scatter(x=hist.index, y=hist['Close'])])
 
      fig.update_xaxes(rangeslider_visible=True, rangeselector=dict(
          buttons=list([
+                 dict(count=1, label="1d", step="day", stepmode="backward"),
+                 dict(count=1, label="1w", step="week", stepmode="backward"),
                  dict(count=1, label="1m", step="month", stepmode="backward"),
-                 dict(count=6, label="6m", step="month", stepmode="backward"),
-                 dict(count=1, label="YTD", step="year", stepmode="todate"),
                  dict(count=1, label="1y", step="year", stepmode="backward"),
+                 dict(count=5, label="5y", step="year", stepmode="backward"),
                  dict(step="all")
              ])
          )
