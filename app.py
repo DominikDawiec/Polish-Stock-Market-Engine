@@ -62,11 +62,6 @@ if option:
      
      ######################################################################
      
-     fig = go.Figure()
-     fig.add_trace(go.Scatter(x=hist.index, y=hist['Volume']))
-     st.plotly_chart(fig)
-     
-     ##############################
      
      
      st.header('Stock Details')
@@ -77,8 +72,14 @@ if option:
      st.write('website',df.info['website'])
      st.write('longBusinessSummary',df.info['longBusinessSummary'])
      
+     
+     ##########################################################
+     
      st.header('Financials')
      
+     st.write(df.financials)
+     
+     ######################################
      
      st.header('Technical Analysis')
 
@@ -130,5 +131,4 @@ if option:
      
 ##############################################
 
-     fig = go.Figure(go.Scatter(x=df.index, y=df.RSI, name='RSI'))
-     st.plotly_chart(fig)
+    
