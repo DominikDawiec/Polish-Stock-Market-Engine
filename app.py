@@ -64,5 +64,12 @@ if option:
      fig.add_trace(go.Scatter(x=hist.index, y=hist['Volume']))
      st.plotly_chart(fig)
      
+     
+     fig = go.Figure(data=[go.Candlestick(x=hist.index,
+                open=hist['Open'],
+                high=hist['High'],
+                low=hist['Low'],
+                close=hist['Close'])])
+     st.plotly_chart(fig)
 
      
