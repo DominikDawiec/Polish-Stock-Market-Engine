@@ -64,6 +64,7 @@ if option:
      fig.add_trace(go.Scatter(x=hist.index, y=hist['Volume']))
      st.plotly_chart(fig)
      
+     df = hist 
      
      
      #EMA
