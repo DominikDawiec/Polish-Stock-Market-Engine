@@ -22,3 +22,21 @@ import io
 warnings.filterwarnings('ignore')
 
 import yfinance as yf
+
+
+
+
+
+
+
+
+
+
+
+companies = ('MSFT','GOOG')
+
+option = st.selectbox('Choose company', companies)
+
+if option:
+     df =  yf.Ticker(option)
+     st.write(df.info)
