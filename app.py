@@ -26,20 +26,18 @@ import yfinance as yf
 
 
 
-
-
-
-
-
+###############################################################
+st.title('Polish Stock Market')
 
 
 companies = ('MSFT','GOOG')
 
-option = st.selectbox('Choose company', companies)
+option = st.selectbox('Please choose a company', companies)
+
 
 if option:
      df =  yf.Ticker(option)
-     st.write(df.info)
+     st.header(df.info['longName'])
      
      hist = df.history(period="max")
      
