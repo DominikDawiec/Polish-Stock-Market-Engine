@@ -40,3 +40,29 @@ option = st.selectbox('Choose company', companies)
 if option:
      df =  yf.Ticker(option)
      st.write(df.info)
+     
+     hist = df.history(period="max")
+     
+     fig = go.Figure([go.Scatter(x=hist.index, y=hist['Close'])])
+
+     fig.update_xaxes(rangeslider_visible=True, rangeselector=dict(
+         buttons=list([
+                 dict(count=1, label="1m", step="month", stepmode="backward"),
+                 dict(count=6, label="6m", step="month", stepmode="backward"),
+                 dict(count=1, label="YTD", step="year", stepmode="todate"),
+                 dict(count=1, label="1y", step="year", stepmode="backward"),
+                 dict(step="all")
+             ])
+         )
+     )
+
+     st.plotly_chart(fig)
+     
+     
+     
+     fig = go.Figure()
+     fig.add_trace(go.Scatter(x=hist.index, y=hist['Volume']))
+     st.plotly_chart(fig)
+     
+
+     
