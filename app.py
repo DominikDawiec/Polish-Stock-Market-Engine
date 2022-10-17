@@ -49,11 +49,10 @@ if option:
 
      fig.update_xaxes(rangeslider_visible=True, rangeselector=dict(
          buttons=list([
-                 dict(count=1, label="1d", step="day", stepmode="backward"),
-                 dict(count=1, label="1w", step="week", stepmode="backward"),
                  dict(count=1, label="1m", step="month", stepmode="backward"),
+                 dict(count=6, label="6m", step="month", stepmode="backward"),
+                 dict(count=1, label="YTD", step="year", stepmode="todate"),
                  dict(count=1, label="1y", step="year", stepmode="backward"),
-                 dict(count=5, label="5y", step="year", stepmode="backward"),
                  dict(step="all")
              ])
          )
@@ -61,12 +60,29 @@ if option:
 
      st.plotly_chart(fig)
      
-     
+     ######################################################################
      
      fig = go.Figure()
      fig.add_trace(go.Scatter(x=hist.index, y=hist['Volume']))
      st.plotly_chart(fig)
      
+     ##############################
+     
+     
+     st.header('Stock Details')
+     
+     st.write('sector',df.info['sector'])
+     st.write('fullTimeEmployees',df.info['fullTimeEmployees'])
+     st.write('industry',df.info['industry'])
+     st.write('website',df.info['website'])
+     st.write('longBusinessSummary',df.info['longBusinessSummary'])
+     
+     st.header('Financials')
+     
+     
+     st.header('Technical Analysis')
+
+     #########################3
      df = hist 
      
      
