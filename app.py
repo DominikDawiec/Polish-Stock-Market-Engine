@@ -129,23 +129,7 @@ if option:
           
           with tab1:
                st.header("Financials")
-               
-               dfx = df.financials
-          
-               fig = go.Figure(data=[go.Table(
-                   header=dict(values=list(dfx.columns),
-                               fill_color='grey',
-                               align='left'),
-                   cells=dict(values=[dfx],
-                              fill_color='white',
-                              align='left'))
-               ])
-
-               fig.show()
-          
-          
-          
-             #st.dataframe(df.financials)
+               st.dataframe(df.financials)
 
           with tab2:
              st.header("Balance Sheet")
