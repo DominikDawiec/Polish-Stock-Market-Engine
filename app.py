@@ -107,24 +107,9 @@ if option:
      with tab1:
           var2 = ('Open','High','Low','Close', 'Volume', 'Dividends','Stock Splits')
           option2 = st.selectbox('Please select option', var2)
-          if option2 = "Open":
+          if option2:
                plot(option2)
-               st.write('dsadsasdss')
-          elif option2 = 'High':
-               plot(option2)
-               st.write('high dsadssads')
-          elif option2 = 'Low':
-               plot(option2)
-               st.write('lowdasasdsd')
-          elif option2 = 'Close':
-               plot(option2)
-               st.write('close dasdsadsasa')
-          elif option2 = 'Volume':
-               plot(option2)
-          elif option2 = 'Dividends':
-               plot(option2)
-          elif option2 = 'Stock Splits':
-               plot(option2)
+               
                
      with tab2:
           st.dataframe(hist)
