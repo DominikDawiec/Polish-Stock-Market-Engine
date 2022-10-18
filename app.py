@@ -83,15 +83,15 @@ if option:
           
           #################################################################
           
-          st.write('Full name: '),df.info['longName'])
-          st.write('Sector: '),df.info['sector'])
-          st.write('Industry: '),df.info['industry'])
-          st.write('Website: '),df.info['website'])
-          st.write('Country: '),df.info['country'])
-          st.write('City: '),df.info['city'])
-          st.write('Address: '),df.info['address1'])
-          st.write('Zip: '),df.info['zip'])
-          st.write('Summary: '),df.info['longBusinessSummary'])
+          st.write('Full name: ',df.info['longName'])
+          st.write('Sector: ',df.info['sector'])
+          st.write('Industry: ',df.info['industry'])
+          st.write('Website: ',df.info['website'])
+          st.write('Country: ',df.info['country'])
+          st.write('City: ',df.info['city'])
+          st.write('Address: ',df.info['address1'])
+          st.write('Zip: ',df.info['zip'])
+          st.write('Summary: ',df.info['longBusinessSummary'])
 
           
      ##########################################################
