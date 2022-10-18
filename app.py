@@ -27,18 +27,35 @@ import yfinance as yf
 
 ###############################################################
 
-st.set_page_config(layout="centered", page_icon="💬", page_title="Commenting app")
+st.set_page_config(layout="centered", page_icon="📈", page_title="Polish Stock App")
 
 ###############################################################
 
-st.title("💬 Commenting app")
+st.title("📈 Polish Stock App")
 
 #####################################################
 companies = ('ALE.WA', 'PLW.WA', 'ANR.WA', 'CMP.WA', 'KGH.WA', 'MEX.WA')
 ####################################################
 
-option = st.selectbox('Please choose a company', companies)
+option = st.selectbox('Please select company', companies)
+###############################################################
 
+
+def plot(var):
+     fig = go.Figure([go.Scatter(x=hist.index, y=hist[var])])
+
+     fig.update_xaxes(rangeslider_visible=True, rangeselector=dict(
+          buttons=list([
+               dict(count=1, label="1m", step="month", stepmode="backward"),
+               dict(count=6, label="6m", step="month", stepmode="backward"),
+               dict(count=1, label="YTD", step="year", stepmode="todate"),
+               dict(count=1, label="1y", step="year", stepmode="backward"),
+               dict(step="all")
+          ])
+     ))
+          
+     st.plotly_chart(fig)
+     
 ###############################################################
 
 if option:
@@ -72,7 +89,7 @@ if option:
      tab1, tab2 = st.tabs(["Plot", "Raw Data"])
      
      with tab1:
-          st.plotly_chart(fig)
+          plot('Close')
           
      with tab2:
           st.dataframe(hist)
