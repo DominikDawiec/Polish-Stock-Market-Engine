@@ -143,7 +143,7 @@ if option:
      with st.expander("📈 Key Performance Indicators"):
           st.header('📈 Key Performance Indicators')
 
-          st.write('📈 ebitdaMargins:  ',df.info['ebitdaMargins'])
+          st.write('📈 ebitdaMargins:  ',df.info['ebitdaMargins'], " measure of a company's operating profit as a percentage of its revenue")
           st.write('📈 profitMargins:  ',df.info['profitMargins'])
           st.write('grossMargins:  ',df.info['grossMargins'])
           st.write('operatingCashflow:  ',df.info['operatingCashflow'])
