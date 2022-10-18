@@ -33,8 +33,9 @@ st.set_page_config(layout="centered", page_icon="💬", page_title="Commenting a
 
 st.title("💬 Commenting app")
 
-
-companies = ('MSFT','GOOG')
+#####################################################
+companies = ('ALE.WA', 'PLW.WA', 'ANR.WA', 'CMP.WA', 'KGH.WA', 'MEX.WA')
+####################################################
 
 option = st.selectbox('Please choose a company', companies)
 
@@ -116,26 +117,22 @@ if option:
      with st.expander("Key Performance Indicators"):
           st.header('Key Performance Indicators')
 
-          st.write('ebitdaMargins',df.info['ebitdaMargins'])
-          st.write('profitMargins',df.info['profitMargins'])
-          st.write('grossMargins',df.info['grossMargins'])
-          st.write('operatingCashflow',df.info['operatingCashflow'])
-          st.write('revenueGrowth',df.info['revenueGrowth'])
-          st.write('operatingMargins',df.info['operatingMargins'])
-          st.write('earningsGrowth',df.info['earningsGrowth'])
-          st.write('currentRatio',df.info['currentRatio'])
-          st.write('returnOnAssets',df.info['returnOnAssets'])
-          st.write('debtToEquity',df.info['debtToEquity'])
-          st.write('returnOnEquity',df.info['returnOnEquity'])
-          st.write('revenuePerShare',df.info['revenuePerShare'])
-          st.write('quickRatio',df.info['quickRatio'])
-          st.write('enterpriseToRevenue',df.info['enterpriseToRevenue'])
-          st.write('enterpriseToEbitda',df.info['enterpriseToEbitda'])
+          st.write('ebitdaMargins:  ',df.info['ebitdaMargins'])
+          st.write('profitMargins:  ',df.info['profitMargins'])
+          st.write('grossMargins:  ',df.info['grossMargins'])
+          st.write('operatingCashflow:  ',df.info['operatingCashflow'])
+          st.write('revenueGrowth:  ',df.info['revenueGrowth'])
+          st.write('operatingMargins:  ',df.info['operatingMargins'])
+          st.write('earningsGrowth:  ',df.info['earningsGrowth'])
+          st.write('currentRatio:  ',df.info['currentRatio'])
+          st.write('returnOnAssets:  ',df.info['returnOnAssets'])
+          st.write('debtToEquity:  ',df.info['debtToEquity'])
+          st.write('returnOnEquity:  ',df.info['returnOnEquity'])
+          st.write('revenuePerShare:  ',df.info['revenuePerShare'])
+          st.write('quickRatio:  ',df.info['quickRatio'])
+          st.write('enterpriseToRevenue:  ',df.info['enterpriseToRevenue'])
+          st.write('enterpriseToEbitda:  ',df.info['enterpriseToEbitda'])
 
-     
-     ##################################
-     with st.expander("News"):
-          st.header('News')
      
      
      ######################################
