@@ -130,13 +130,13 @@ if option:
           with tab1:
                st.header("Financials")
                
-               df = df.financials
+               dfx = df.financials
           
                fig = go.Figure(data=[go.Table(
-                   header=dict(values=list(df.columns),
+                   header=dict(values=list(dfx.columns),
                                fill_color='grey',
                                align='left'),
-                   cells=dict(values=[df],
+                   cells=dict(values=[dfx],
                               fill_color='white',
                               align='left'))
                ])
