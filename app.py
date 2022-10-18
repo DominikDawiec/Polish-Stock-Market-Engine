@@ -1,3 +1,5 @@
+# importing all required packages 
+
 import pandas as pd
 import numpy as np
 
@@ -25,11 +27,11 @@ import yfinance as yf
 
 ###############################################################
 
+st.set_page_config(layout="centered", page_icon="💬", page_title="Commenting app")
 
-     
-     
 ###############################################################
-st.title('Polish Stock Market')
+
+st.title("💬 Commenting app")
 
 
 companies = ('MSFT','GOOG')
@@ -39,11 +41,14 @@ option = st.selectbox('Please choose a company', companies)
 ###############################################################
 
 if option:
+     
      df =  yf.Ticker(option)
      ###############################################################
+     
      st.header(df.info['longName'])
      
      ###############################################################
+     
      hist = df.history(period="max")
      
      ###############################################################
@@ -61,23 +66,15 @@ if option:
          )
      )
      
+     tab1, tab2 = st.tabs(["Plot", "Raw Data"])
      
-     ######################################################################
+     with tab1:
+          st.plotly_chart(fig)
+          
+     with tab2:
+          st.dataframe(hist)
      
-     col1, col2 = st.columns([3, 1])
-
-     with col1:
-        st.header("Name 1")
-        st.plotly_chart(fig)
-
-     with col2:
-        st.header("Name 2")
-        st.image("https://static.streamlit.io/examples/dog.jpg")
-
-     
-     
-     ######################################################################
-     
+     ###################################################################### 
      
      with st.expander("Stock details"):
           st.header('Stock Details')
