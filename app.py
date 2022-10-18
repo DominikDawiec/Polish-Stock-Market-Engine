@@ -107,9 +107,25 @@ if option:
      with tab1:
           var2 = ('Open','High','Low','Close', 'Volume', 'Dividends','Stock Splits')
           option2 = st.selectbox('Please select option', var2)
-          if option2: 
+          if option2 = 'Open':
                plot(option2)
-          
+               st.write('dsadsasdss')
+          elif option2 = 'High':
+               plot(option2)
+               st.write('high dsadssads')
+          elif option2 = 'Low':
+               plot(option2)
+               st.write('lowdasasdsd')
+          elif option2 = 'Close':
+               plot(option2)
+               st.write('close dasdsadsasa')
+          elif option2 = 'Volume':
+               plot(option2)
+          elif option2 = 'Dividends':
+               plot(option2)
+          elif option2 = 'Stock Splits':
+               plot(option2)
+               
      with tab2:
           st.dataframe(hist)
      
@@ -143,7 +159,7 @@ if option:
      with st.expander("📈 Key Performance Indicators"):
           st.header('📈 Key Performance Indicators')
 
-          st.write('📈 ebitdaMargins:  ',df.info['ebitdaMargins'], " measure of a company's operating profit as a percentage of its revenue")
+          st.write('📈 ebitdaMargins:  ',df.info['ebitdaMargins'])
           st.write('📈 profitMargins:  ',df.info['profitMargins'])
           st.write('grossMargins:  ',df.info['grossMargins'])
           st.write('operatingCashflow:  ',df.info['operatingCashflow'])
