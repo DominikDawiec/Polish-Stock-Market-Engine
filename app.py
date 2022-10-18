@@ -89,7 +89,10 @@ if option:
      tab1, tab2 = st.tabs(["Plot", "Raw Data"])
      
      with tab1:
-          plot('Close')
+          var2 = ('Open','High','Low','Close','Dividends','Stock Splits')
+          option2 = st.selectbox('Please select option', var2)
+          if option2: 
+               plot(option2)
           
      with tab2:
           st.dataframe(hist)
