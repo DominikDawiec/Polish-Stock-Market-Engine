@@ -117,7 +117,7 @@ if option:
      with st.expander("Key Performance Indicators"):
           st.header('Key Performance Indicators')
 
-          st.write('ebitdaMargins:  ',df.info['ebitdaMargins'], help="Use in-built example file to demo the app")
+          st.write('ebitdaMargins:  ',df.info['ebitdaMargins'])
           st.write('profitMargins:  ',df.info['profitMargins'])
           st.write('grossMargins:  ',df.info['grossMargins'])
           st.write('operatingCashflow:  ',df.info['operatingCashflow'])
