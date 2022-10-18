@@ -66,6 +66,8 @@ if option:
          )
      )
      
+     ######################################################################
+     
      tab1, tab2 = st.tabs(["Plot", "Raw Data"])
      
      with tab1:
@@ -76,16 +78,22 @@ if option:
      
      ###################################################################### 
      
-     with st.expander("Stock details"):
-          st.header('Stock Details')
+     with st.expander("Company's details"):
+          st.header("Company's details")
+          
+          #################################################################
+          
+          st.write('Full name: '),df.info['longName'])
+          st.write('Sector: '),df.info['sector'])
+          st.write('Industry: '),df.info['industry'])
+          st.write('Website: '),df.info['website'])
+          st.write('Country: '),df.info['country'])
+          st.write('City: '),df.info['city'])
+          st.write('Address: '),df.info['address1'])
+          st.write('Zip: '),df.info['zip'])
+          st.write('Summary: '),df.info['longBusinessSummary'])
 
-          st.write('sector',df.info['sector'])
-          st.write('fullTimeEmployees',str(df.info['fullTimeEmployees']))
-          st.write('industry',df.info['industry'])
-          st.write('website',df.info['website'])
-          st.write('longBusinessSummary',df.info['longBusinessSummary'])
-
-     
+          
      ##########################################################
      with st.expander("Financials"):
           st.header('Financials')
