@@ -123,14 +123,29 @@ if option:
 
           
      ##########################################################
-     with st.expander("Financials"):
-          st.header('Financials')
+     with st.expander("Financial Data"):
           
           tab1, tab2, tab3 = st.tabs(["Financials", "Balance Sheet", "Cashflow"])
           
           with tab1:
-             st.header("Financials")
-             st.dataframe(df.financials)
+               st.header("Financials")
+               
+               df = df.financials
+          
+               fig = go.Figure(data=[go.Table(
+                   header=dict(values=list(df.columns),
+                               fill_color='grey',
+                               align='left'),
+                   cells=dict(values=[df],
+                              fill_color='white',
+                              align='left'))
+               ])
+
+               fig.show()
+          
+          
+          
+             #st.dataframe(df.financials)
 
           with tab2:
              st.header("Balance Sheet")
