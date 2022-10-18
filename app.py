@@ -60,7 +60,7 @@ def plot(var):
 
 def details():
      
-     st.header("Company's details")
+     st.header("📈 Company's details")
      
      st.write('Full name: ', str(df.info['longName']))
      st.write('Sector: ', str(df.info['sector']))
@@ -115,7 +115,7 @@ if option:
      
      ###################################################################### 
      
-     with st.expander("Company's details"):
+     with st.expander("📈 Company's details"):
           
           #################################################################
           
@@ -123,28 +123,28 @@ if option:
 
           
      ##########################################################
-     with st.expander("Financial Data"):
+     with st.expander("📈 Financial Data"):
           
           tab1, tab2, tab3 = st.tabs(["Financials", "Balance Sheet", "Cashflow"])
           
           with tab1:
-               st.header("Financials")
+               st.header("📈 Financial ")
                st.dataframe(df.financials)
 
           with tab2:
-             st.header("Balance Sheet")
+             st.header("📈 Balance Sheet")
              st.dataframe(df.balance_sheet)
 
           with tab3:
-             st.header("Cashflow")
+             st.header("📈 Cashflow")
              st.dataframe(df.cashflow)
      
      ######################################
-     with st.expander("Key Performance Indicators"):
-          st.header('Key Performance Indicators')
+     with st.expander("📈 Key Performance Indicators"):
+          st.header('📈 Key Performance Indicators')
 
-          st.write('ebitdaMargins:  ',df.info['ebitdaMargins'])
-          st.write('profitMargins:  ',df.info['profitMargins'])
+          st.write('📈 ebitdaMargins:  ',df.info['ebitdaMargins'])
+          st.write('📈 profitMargins:  ',df.info['profitMargins'])
           st.write('grossMargins:  ',df.info['grossMargins'])
           st.write('operatingCashflow:  ',df.info['operatingCashflow'])
           st.write('revenueGrowth:  ',df.info['revenueGrowth'])
@@ -162,8 +162,8 @@ if option:
      
      
      ######################################
-     with st.expander("Technical Analysis"):
-          st.header('Technical Analysis')
+     with st.expander("📈Technical Analysis"):
+          st.header('📈Technical Analysis')
 
      #########################3
           df = hist 
@@ -202,6 +202,7 @@ if option:
      #####################################
 
           fig = go.Figure()
+          
           fig.add_trace(go.Scatter(x=df.index, y=df.EMA_9, name='EMA 9'))
           fig.add_trace(go.Scatter(x=df.index, y=df.EMA_22, name='EMA 22'))
           fig.add_trace(go.Scatter(x=df.index, y=df.SMA_5, name='SMA 5'))
@@ -209,8 +210,19 @@ if option:
           fig.add_trace(go.Scatter(x=df.index, y=df.SMA_15, name='SMA 15'))
           fig.add_trace(go.Scatter(x=df.index, y=df.SMA_30, name='SMA 30'))
           fig.add_trace(go.Scatter(x=df.index, y=df.Close, name='Close', opacity=0.3))
+          
+          fig.update_xaxes(rangeslider_visible=True, rangeselector=dict(
+          buttons=list([
+               dict(count=1, label="1m", step="month", stepmode="backward"),
+               dict(count=6, label="6m", step="month", stepmode="backward"),
+               dict(count=1, label="YTD", step="year", stepmode="todate"),
+               dict(count=1, label="1y", step="year", stepmode="backward"),
+               dict(step="all")
+          ])))
+          
           st.plotly_chart(fig)
      
 ##############################################
+
      with st.expander("Forecast"):
           st.header('Forecast')
