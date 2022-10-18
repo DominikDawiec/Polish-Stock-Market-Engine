@@ -93,6 +93,8 @@ if option:
           option2 = st.selectbox('Please select option', var2)
           if option2: 
                plot(option2)
+               plot('Volume')
+          
           
      with tab2:
           st.dataframe(hist)
