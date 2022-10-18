@@ -97,10 +97,20 @@ if option:
      ##########################################################
      with st.expander("Financials"):
           st.header('Financials')
+          
+          tab1, tab2, tab3 = st.tabs(["Financials", "Balance Sheet", "Cashflow"])
+          
+          with tab1:
+             st.header("Financials")
+             st.dataframe(df.financials)
 
-          st.write(df.financials)
-          st.write(df.balance_sheet)
-          st.write(df.cashflow)
+          with tab2:
+             st.header("Balance Sheet")
+             st.dataframe(df.balance_sheet)
+
+          with tab3:
+             st.header("Cashflow")
+             st.dataframe(df.cashflow)
      
      ######################################
      with st.expander("Key Performance Indicators"):
