@@ -56,6 +56,22 @@ def plot(var):
           
      st.plotly_chart(fig)
      
+#######################################################################################3
+
+def details():
+     
+     st.header("Company's details")
+     
+     st.write('Full name: ', str(df.info['longName']))
+     st.write('Sector: ', str(df.info['sector']))
+     st.write('Industry: ', str(df.info['industry']))
+     st.write('Website: ', str(df.info['website']))
+     st.write('Country: ', str(df.info['country']))
+     st.write('City: ', str(df.info['city']))
+     st.write('Address: ', str(df.info['address1']))
+     st.write('Zip: ', str(df.info['zip']))
+     st.write('Summary: ', str(df.info['longBusinessSummary']))
+     
 ###############################################################
 
 if option:
@@ -89,12 +105,10 @@ if option:
      tab1, tab2 = st.tabs(["Plot", "Raw Data"])
      
      with tab1:
-          var2 = ('Open','High','Low','Close','Dividends','Stock Splits')
+          var2 = ('Open','High','Low','Close', 'Volume', 'Dividends','Stock Splits')
           option2 = st.selectbox('Please select option', var2)
           if option2: 
                plot(option2)
-               plot('Volume')
-          
           
      with tab2:
           st.dataframe(hist)
@@ -102,19 +116,10 @@ if option:
      ###################################################################### 
      
      with st.expander("Company's details"):
-          st.header("Company's details")
           
           #################################################################
           
-          st.write('Full name: ',df.info['longName'])
-          st.write('Sector: ',df.info['sector'])
-          st.write('Industry: ',df.info['industry'])
-          st.write('Website: ',df.info['website'])
-          st.write('Country: ',df.info['country'])
-          st.write('City: ',df.info['city'])
-          st.write('Address: ',df.info['address1'])
-          st.write('Zip: ',df.info['zip'])
-          st.write('Summary: ',df.info['longBusinessSummary'])
+          details()
 
           
      ##########################################################
