@@ -128,7 +128,7 @@ if option:
           tab1, tab2, tab3 = st.tabs(["Financials", "Balance Sheet", "Cashflow"])
           
           with tab1:
-               st.header("📈 Financial ")
+               st.header("📈 Financial Statement")
                st.dataframe(df.financials)
 
           with tab2:
