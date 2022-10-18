@@ -164,7 +164,7 @@ if option:
                
           with tab2:
                st.header('📈 Key Performance Indicators')
-               st.write('📈 ebitdaMargins:  measure of a company's operating profit as a percentage of its revenue',df.info['ebitdaMargins'])
+               st.write("📈 ebitdaMargins:  measure of a company's operating profit as a percentage of its revenue",df.info['ebitdaMargins'])
                st.write('📈 profitMargins:  ',df.info['profitMargins'])
                st.write('📈 grossMargins:  ',df.info['grossMargins'])
                st.write('📈 operatingCashflow:  ',df.info['operatingCashflow'])
@@ -175,7 +175,7 @@ if option:
                st.write('📈 returnOnAssets:  ',df.info['returnOnAssets'])
                st.write('📈 debtToEquity:  ',df.info['debtToEquity'])
                st.write('📈 returnOnEquity:  ',df.info['returnOnEquity'])
-               st.write('📈 revenuePerShare:  ratio that computes the total revenue earned per share over a designated period, whether quarterly, semi-annually, annually, or trailing twelve months (TTM) ',df.info['revenuePerShare'])
+               st.write("📈 revenuePerShare:  ratio that computes the total revenue earned per share over a designated period, whether quarterly, semi-annually, annually, or trailing twelve months (TTM) ",df.info['revenuePerShare'])
                st.write('📈 quickRatio:  ',df.info['quickRatio'])
                st.write('📈 enterpriseToRevenue:  ',df.info['enterpriseToRevenue'])
                st.write('📈 enterpriseToEbitda:  ',df.info['enterpriseToEbitda'])
