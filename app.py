@@ -84,17 +84,17 @@ def plot():
 
 def details():
      
-     st.header("📈 Company's details")
+     st.header("📝 Company's details")
      
      st.write('Full name: ', str(df.info['longName']))
      st.write('Sector: ', str(df.info['sector']))
      st.write('Industry: ', str(df.info['industry']))
-     st.write('Website: ', str(df.info['website']))
      st.write('Country: ', str(df.info['country']))
      st.write('City: ', str(df.info['city']))
      st.write('Address: ', str(df.info['address1']))
      st.write('Zip: ', str(df.info['zip']))
      st.write('Summary: ', str(df.info['longBusinessSummary']))
+     st.write('Website: ', str(df.info['website']))
      
 ###############################################################
 
@@ -120,77 +120,72 @@ if option:
      
      ###################################################################### 
      
-     with st.expander("📈 Company's details"):
-          
-          #################################################################
-          
+     with st.expander("📝 Company's details"):
+                    
           details()
 
           
      ##########################################################
-     with st.expander("📈 Financial Data"):
+     with st.expander("💰 Financial Data"):
           
           tab1, tab2, tab3 = st.tabs(["Financials", "Balance Sheet", "Cashflow"])
           
           with tab1:
-               st.header("📈 Financial Statement")
+               st.header("💵 Financial Statement")
                st.dataframe(df.financials)
 
           with tab2:
-             st.header("📈 Balance Sheet")
+             st.header("⚖️ Balance Sheet")
              st.dataframe(df.balance_sheet)
 
           with tab3:
-             st.header("📈 Cashflow")
+             st.header("💸 Cashflow")
              st.dataframe(df.cashflow)
      
      ######################################
-     with st.expander("📈 Key Performance Indicators"):
+     with st.expander("🎯 Key Performance Indicators"):
           tab1, tab2 = st.tabs(["KPI", "KPI with wytlumaczenie"])
           
           with tab1:
-               st.header('📈 Key Performance Indicators')
-               st.write('📈 ebitdaMargins:  ',df.info['ebitdaMargins'])
-               st.write('📈 profitMargins:  ',df.info['profitMargins'])
-               st.write('📈 grossMargins:  ',df.info['grossMargins'])
-               st.write('📈 operatingCashflow:  ',df.info['operatingCashflow'])
-               st.write('📈 revenueGrowth:  ',df.info['revenueGrowth'])
-               st.write('📈 operatingMargins:  ',df.info['operatingMargins'])
-               st.write('📈 earningsGrowth:  ',df.info['earningsGrowth'])
-               st.write('📈 currentRatio:  ',df.info['currentRatio'])
-               st.write('📈 returnOnAssets:  ',df.info['returnOnAssets'])
-               st.write('📈 debtToEquity:  ',df.info['debtToEquity'])
-               st.write('📈 returnOnEquity:  ',df.info['returnOnEquity'])
-               st.write('📈 revenuePerShare:  ',df.info['revenuePerShare'])
-               st.write('📈 quickRatio:  ',df.info['quickRatio'])
-               st.write('📈 enterpriseToRevenue:  ',df.info['enterpriseToRevenue'])
-               st.write('📈 enterpriseToEbitda:  ',df.info['enterpriseToEbitda'])
+               st.header('🎯 Key Performance Indicators')
+               st.write('🔴 ebitdaMargins:  ',df.info['ebitdaMargins'])
+               st.write('🔴 profitMargins:  ',df.info['profitMargins'])
+               st.write('🔴 operatingCashflow:  ',df.info['operatingCashflow'])
+               st.write('🔴 revenueGrowth:  ',df.info['revenueGrowth'])
+               st.write('🔴 operatingMargins:  ',df.info['operatingMargins'])
+               st.write('🔴 earningsGrowth:  ',df.info['earningsGrowth'])
+               st.write('🔴 currentRatio:  ',df.info['currentRatio'])
+               st.write('🔴 returnOnAssets:  ',df.info['returnOnAssets'])
+               st.write('🔴 debtToEquity:  ',df.info['debtToEquity'])
+               st.write('🔴 returnOnEquity:  ',df.info['returnOnEquity'])
+               st.write('🔴 revenuePerShare:  ',df.info['revenuePerShare'])
+               st.write('🔴 quickRatio:  ',df.info['quickRatio'])
+               st.write('🔴 enterpriseToRevenue:  ',df.info['enterpriseToRevenue'])
+               st.write('🔴 enterpriseToEbitda:  ',df.info['enterpriseToEbitda'])
                
           with tab2:
-               st.header('📈 Key Performance Indicators')
-               st.write("📈 ebitdaMargins:  measure of a company's operating profit as a percentage of its revenue",df.info['ebitdaMargins'])
-               st.write('📈 profitMargins:  ',df.info['profitMargins'])
-               st.write('📈 grossMargins:  ',df.info['grossMargins'])
-               st.write('📈 operatingCashflow:  ',df.info['operatingCashflow'])
-               st.write('📈 revenueGrowth:  ',df.info['revenueGrowth'])
-               st.write('📈 operatingMargins:  ',df.info['operatingMargins'])
-               st.write('📈 earningsGrowth:  ',df.info['earningsGrowth'])
-               st.write('📈 currentRatio:  ',df.info['currentRatio'])
-               st.write('📈 returnOnAssets:  ',df.info['returnOnAssets'])
-               st.write('📈 debtToEquity:  ',df.info['debtToEquity'])
-               st.write('📈 returnOnEquity:  ',df.info['returnOnEquity'])
-               st.write("📈 revenuePerShare:  ratio that computes the total revenue earned per share over a designated period, whether quarterly, semi-annually, annually, or trailing twelve months (TTM) ",df.info['revenuePerShare'])
-               st.write('📈 quickRatio:  ',df.info['quickRatio'])
-               st.write('📈 enterpriseToRevenue:  ',df.info['enterpriseToRevenue'])
-               st.write('📈 enterpriseToEbitda:  ',df.info['enterpriseToEbitda'])
+               st.header('🔴 Key Performance Indicators')
+               st.write("🔴 ebitdaMargins:  measure of a company's operating profit as a percentage of its revenue",df.info['ebitdaMargins'])
+               st.write('🔴 profitMargins:  measure of profitability',df.info['profitMargins'])
+               st.write('🔴 operatingCashflow:  measure of the amount of cash generated by a company's normal business operations',df.info['operatingCashflow'])
+               st.write("🔴 revenueGrowth:  the increase (or decrease) in a company's sales from one period to the next",df.info['revenueGrowth'])
+               st.write('🔴 operatingMargins:  measures how much profit a company makes on a dollar of sales after paying for variable costs of production',df.info['operatingMargins'])
+               st.write("🔴 earningsGrowth:  measure of the increase in a company's income in a particular period",df.info['earningsGrowth'])
+               st.write('🔴 currentRatio:   liquidity ratio that measures whether a firm has enough resources to meet its short-term obligations',df.info['currentRatio'])
+               st.write('🔴 returnOnAssets:  financial ratio that indicates how profitable a company is in relation to its total assets',df.info['returnOnAssets'])
+               st.write("🔴 debtToEquity:  measures your company's total debt relative to the amount originally invested by the owners and the earnings that have been retained over time",df.info['debtToEquity'])
+               st.write("🔴 returnOnEquity:  measure of financial performance calculated by dividing net income by shareholders' equity",df.info['returnOnEquity'])
+               st.write("🔴 revenuePerShare:  ratio that computes the total revenue earned per share over a designated period, whether quarterly, semi-annually, annually, or trailing twelve months (TTM) ",df.info['revenuePerShare'])
+               st.write("🔴 quickRatio:  measures a company's capacity to pay its current liabilities without needing to sell its inventory or obtain additional financing",df.info['quickRatio'])
+               st.write('🔴 enterpriseToRevenue:  for any earnout period, revenue from all Enterprise Customers of the Business that is recognized during such period',df.info['enterpriseToRevenue'])
+               st.write("🔴 enterpriseToEbitda:  compares the value of a company—debt included—to the company's cash earnings less non-cash expenses",df.info['enterpriseToEbitda'])
      
      ######################################
-     with st.expander("📈Technical Analysis"):
-          st.header('📈Technical Analysis')
+     with st.expander("📊Technical Analysis"):
+          st.header('📊Technical Analysis')
 
      #########################3
           df = hist 
-
 
           #EMA
           df['EMA_9'] = df['Close'].ewm(9).mean().shift()
@@ -245,7 +240,3 @@ if option:
           
           st.plotly_chart(fig)
      
-##############################################
-
-     with st.expander("Forecast"):
-          st.header('Forecast')
