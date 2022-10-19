@@ -46,7 +46,7 @@ with st.sidebar:
 
 
 def plot():
-     fig = go.Figure([go.Scatter(x=hist.index, y=(hist['Open'], hist['High'], hist['Low'], hist['Close'])              )])
+     fig = go.Figure([go.Scatter(x=hist.index, y=(hist['Open'], hist['Close'])              )])
 
      fig.update_xaxes(rangeslider_visible=True, rangeselector=dict(
           buttons=list([
