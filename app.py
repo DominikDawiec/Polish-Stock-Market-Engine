@@ -46,17 +46,23 @@ with st.sidebar:
 
 
 def plot():
-     fig = go.Figure([go.Scatter(x=hist.index, y=hist['Open'], mode='lines', name='Open')])
+     fig = go.Figure([go.Scatter(x=hist.index, y=hist['Open'], 
+                    mode='lines', 
+                    name='Open', 
+                    color='red')])
      
      fig.add_trace(go.Scatter(x=hist.index, y=hist['Low'],
                     mode='lines',
-                    name='Low'))
+                    name='Low',
+                    color='blue'))
      fig.add_trace(go.Scatter(x=hist.index, y=hist['High'],
                     mode='lines',
-                    name='High'))
+                    name='High',
+                    color='yellow'))
      fig.add_trace(go.Scatter(x=hist.index, y=hist['Close'],
                     mode='lines',
-                    name='Close'))
+                    name='Close',
+                    color='orange'))
 
      fig.update_xaxes(rangeslider_visible=True, rangeselector=dict(
           buttons=list([
