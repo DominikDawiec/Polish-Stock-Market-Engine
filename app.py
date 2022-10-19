@@ -38,7 +38,14 @@ companies = ('ALE.WA', 'PLW.WA', 'ANR.WA', 'CMP.WA', 'KGH.WA', 'MEX.WA')
 ####################################################
 with st.sidebar:
      option = st.selectbox('Please select company', companies)
-     st.write('sidebar test')
+     agree1 = st.checkbox('Dompany's details')
+     agree2 = st.checkbox('Financial Data')
+     agree3 = st.checkbox('KPI')
+     agree4 = st.checkbox('Technical Analysis')
+     agree5 = st.checkbox('Forecast')
+     agree6 = st.checkbox('Comparision')
+
+
 ###############################################################
 
 
