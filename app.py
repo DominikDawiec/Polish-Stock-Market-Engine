@@ -38,6 +38,7 @@ companies = ('ALE.WA', 'PLW.WA', 'ANR.WA', 'CMP.WA', 'KGH.WA', 'MEX.WA')
 ####################################################
 with st.sidebar:
      option = st.selectbox('Please select company', companies)
+     st.write('sidebar test')
 ###############################################################
 
 
