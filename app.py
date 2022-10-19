@@ -46,7 +46,7 @@ with st.sidebar:
 
 
 def plot():
-     fig = go.Figure([go.Scatter(x=hist.index, y=hist['Open'])])
+     fig = go.Figure([go.Scatter(x=hist.index, y=hist['Open'], mode='lines', name='Open')])
      
      fig.add_trace(go.Scatter(x=hist.index, y=hist['Close'],
                     mode='lines',
