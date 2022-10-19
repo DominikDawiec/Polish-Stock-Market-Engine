@@ -116,7 +116,10 @@ if option:
           plot()
                
      with tab2:
-          st.dataframe(hist)
+          dataframe = hist
+          dataframe.index = pd.to_datetime(dataframe.index).dt.date
+          
+          st.dataframe(dataframe)
      
      ###################################################################### 
      
