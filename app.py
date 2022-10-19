@@ -45,7 +45,7 @@ with st.sidebar:
 ###############################################################
 
 
-def plot(id):
+def plot():
      fig = go.Figure([go.Scatter(x=hist.index, y=(hist['Open'], hist['High'], hist['Low'], hist['Close'])              )])
 
      fig.update_xaxes(rangeslider_visible=True, rangeselector=dict(
@@ -93,10 +93,7 @@ if option:
      tab1, tab2 = st.tabs(["Plot", "Raw Data"])
      
      with tab1:
-          var2 = ('Open','High','Low','Close', 'Volume', 'Dividends','Stock Splits')
-          option2 = st.selectbox('Please select option', var2)
-          if option2:
-               plot(option2)
+          plot()
                
      with tab2:
           st.dataframe(hist)
