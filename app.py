@@ -27,30 +27,26 @@ import yfinance as yf
 
 ###############################################################
 
-st.set_page_config(layout="centered", page_icon="📈", page_title="Polish Stock App")
+st.set_page_config(layout="centered", page_icon="📈", page_title="Polish Stock Market App")
 
 ###############################################################
 
 st.title("📈 Polish Stock App")
 
 #####################################################
+
 companies = ('ALE.WA', 'PLW.WA', 'ANR.WA', 'CMP.WA', 'KGH.WA', 'MEX.WA')
+
 ####################################################
+
 with st.sidebar:
      option = st.selectbox('Please select company', companies)
-     agree1 = st.checkbox("Company's details")
-     agree2 = st.checkbox('Financial Data')
-     agree3 = st.checkbox('KPI')
-     agree4 = st.checkbox('Technical Analysis')
-     agree5 = st.checkbox('Forecast')
-     agree6 = st.checkbox('Comparision')
-
 
 ###############################################################
 
 
-def plot(var):
-     fig = go.Figure([go.Scatter(x=hist.index, y=hist[var])])
+def plot(id):
+     fig = go.Figure([go.Scatter(x=hist.index, y=(hist['Open'], hist['High'], hist['Low'], hist['Close'])              )])
 
      fig.update_xaxes(rangeslider_visible=True, rangeselector=dict(
           buttons=list([
@@ -85,28 +81,12 @@ def details():
 if option:
      
      df =  yf.Ticker(option)
-     ###############################################################
      
+     # Setting the header
      st.header(df.info['longName'])
      
-     ###############################################################
-     
+     # def get data
      hist = df.history(period="max")
-     
-     ###############################################################
-     
-     fig = go.Figure([go.Scatter(x=hist.index, y=hist['Close'])])
-
-     fig.update_xaxes(rangeslider_visible=True, rangeselector=dict(
-         buttons=list([
-                 dict(count=1, label="1m", step="month", stepmode="backward"),
-                 dict(count=6, label="6m", step="month", stepmode="backward"),
-                 dict(count=1, label="YTD", step="year", stepmode="todate"),
-                 dict(count=1, label="1y", step="year", stepmode="backward"),
-                 dict(step="all")
-             ])
-         )
-     )
      
      ######################################################################
      
@@ -117,7 +97,6 @@ if option:
           option2 = st.selectbox('Please select option', var2)
           if option2:
                plot(option2)
-               
                
      with tab2:
           st.dataframe(hist)
