@@ -46,7 +46,11 @@ with st.sidebar:
 
 
 def plot():
-     fig = go.Figure([go.Scatter(x=hist.index, y=(hist['Open', 'Close'])              )])
+     fig = go.Figure([go.Scatter(x=hist.index, y=hist['Open'])])
+     
+     fig.add_trace(go.Scatter(x=hist.index, y=rhist['Close'],
+                    mode='lines',
+                    name='Close'))
 
      fig.update_xaxes(rangeslider_visible=True, rangeselector=dict(
           buttons=list([
