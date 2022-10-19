@@ -49,20 +49,20 @@ def plot():
      fig = go.Figure([go.Scatter(x=hist.index, y=hist['Open'], 
                     mode='lines', 
                     name='Open', 
-                    color='red')])
+                    )])
      
      fig.add_trace(go.Scatter(x=hist.index, y=hist['Low'],
                     mode='lines',
                     name='Low',
-                    color='blue'))
+                    ))
      fig.add_trace(go.Scatter(x=hist.index, y=hist['High'],
                     mode='lines',
                     name='High',
-                    color='yellow'))
+                    ))
      fig.add_trace(go.Scatter(x=hist.index, y=hist['Close'],
                     mode='lines',
                     name='Close',
-                    color='orange'))
+                    ))
 
      fig.update_xaxes(rangeslider_visible=True, rangeselector=dict(
           buttons=list([
