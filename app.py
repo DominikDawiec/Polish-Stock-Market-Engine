@@ -116,7 +116,7 @@ if option:
           plot()
                
      with tab2:
-          hist['Date_2'] = pd.to_datetime(df.index).dt.date
+          hist['Date_2'] = pd.to_datetime(hist.index).dt.date
           
           st.dataframe(hist)
      
