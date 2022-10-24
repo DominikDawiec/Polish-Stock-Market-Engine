@@ -33,6 +33,7 @@ To see the website, please click on the [LINK](https://dominikdawiec-polish-stoc
 
 ## Getting Started
 1. You may see the result through this link 
+2. you can see the code in app.py
 
 ## Contact
 * Please feel free to reach me through my [LinkedIn](http://linkedin.com/in/dominikdawiec/).  
