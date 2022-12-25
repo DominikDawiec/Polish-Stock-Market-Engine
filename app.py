@@ -105,7 +105,7 @@ def show_financial_data():
         st.header("💸 Cashflow")
         st.dataframe(df.cashflow)
 
-   def show_key_performance_indicators():
+def show_key_performance_indicators():
     st.header('🎯 Key Performance Indicators')
     st.write('🔴 ebitdaMargins:  ',df.info['ebitdaMargins'])
     st.write('🔴 profitMargins:  ',df.info['profitMargins'])
