@@ -27,7 +27,7 @@ import yfinance as yf
 
 ###############################################################
 
-st.set_page_config(layout="centered", page_icon="📈", page_title="Polish Stock Market App")
+st.set_page_config(layout="centered", page_icon="📈", page_title="Polish Stock Market App", style={"background-color": "#0E1117"})
 
 ###############################################################
 
@@ -39,7 +39,7 @@ companies = ('ALE.WA', 'PLW.WA', 'ANR.WA', 'CMP.WA', 'KGH.WA', 'MEX.WA')
 
 ####################################################
 
-st.sidebar(color="#262730")
+#st.sidebar(color="#262730")
 with st.sidebar:
      option = st.selectbox('Please select company', companies)
 
