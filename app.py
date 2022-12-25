@@ -86,7 +86,7 @@ def details():
      
      st.header("📝 Company's details")
      
-     st.write('Full name: ', str(df.info['longName']))
+     # st.write('Full name: ', str(df.info['longName']))
      st.write('Sector: ', str(df.info['sector']))
      st.write('Industry: ', str(df.info['industry']))
      st.write('Country: ', str(df.info['country']))
