@@ -123,8 +123,8 @@ def show_financial_data():
     st.write('🔴 enterpriseToEbitda:  ',df.info['enterpriseToEbitda'])
 
 if option:
-    st.expander("🎯 Key Performance Indicators")(show_key_performance_indicators)
-    st.expander("📊Technical Analysis")(show_technical_analysis)
+    st.expander("🎯 Key Performance Indicators")(show_key_performance_indicators())
+    st.expander("📊Technical Analysis")(show_technical_analysis())
 
 def show_technical_analysis():
     st.header('📊Technical Analysis')
