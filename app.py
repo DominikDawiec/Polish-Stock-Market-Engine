@@ -122,7 +122,6 @@ if option:
      ###################################################################### 
      
      with st.expander("📝 Company's details"):
-                    
           details()
 
           
