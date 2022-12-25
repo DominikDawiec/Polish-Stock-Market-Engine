@@ -27,7 +27,7 @@ import yfinance as yf
 
 ###############################################################
 
-st.set_page_config(layout="centered", page_icon="📈", page_title="Polish Stock Market App", style={"background-color": "#0E1117"})
+st.set_page_config(layout="centered", page_icon="📈", page_title="Polish Stock Market App")
 
 ###############################################################
 
