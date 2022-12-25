@@ -103,7 +103,7 @@ if option:
      df =  yf.Ticker(option)
      
      # Setting the header
-     st.header(df.info[longName])
+     # st.header(df.info[longName])
      
      # def get data
      hist = df.history(period="max")
