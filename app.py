@@ -239,6 +239,25 @@ if option:
                   dict(step="all")
               ])
           ))
+          
+          # Get today's date
+          today = pd.to_datetime('today')
+
+          # Forecast 3 months into the future
+          forecast_period = 3
+          num_days = forecast_period * 30
+
+          # Create a list of dates for the forecast period
+          forecast_dates = [today + pd.DateOffset(days=x) for x in range(1, num_days+1)]
+
+          # Create a dataframe with the forecasted values and dates
+          forecast_df = pd.DataFrame({'Date': forecast_dates, 'Forecasted Close': y_pred[-num_days:]})
+
+          # Create a trace for the forecasted Close values
+          forecast_trace = go.Scatter(x=forecast_df['Date'], y=forecast_df['Forecasted Close'], name='Forecasted Close')
+
+          # Add the forecast trace to the figure
+          fig.add_trace(forecast_trace)
 
           # Display the figure
           st.plotly_chart(fig)
