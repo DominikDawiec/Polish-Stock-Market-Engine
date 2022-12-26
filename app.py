@@ -106,7 +106,7 @@ if option:
         details()
           
     with st.expander("💰 Financial Data"):
-    tab1, tab2, tab3 = st.tabs(["Financials", "Balance Sheet", "Cashflow"])
+     tab1, tab2, tab3 = st.tabs(["Financials", "Balance Sheet", "Cashflow"])
 
     with tab1:
         st.header("💵 Financial Statement")
