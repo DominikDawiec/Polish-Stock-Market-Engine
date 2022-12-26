@@ -217,7 +217,7 @@ if option:
      X_test = test_df[['Close']]
      y_pred = model.predict(X_test)
      
-     tab1, tab2, tab3 = st.tabs(["Financials", "Balance Sheet", "Cashflow"])
+     tab1, tab2 = st.tabs(["Forecast Plot", "Model Details"])
 
      with tab1:
           # Create a trace for the original Close data
@@ -245,9 +245,6 @@ if option:
       
 
      with tab2:
-          st.header("⚖️ Balance Sheet")
-         
-     with tab3:
-          st.header("💸 Cashflow")
-          
+          st.write(model.get_params())
+     
     
