@@ -47,23 +47,23 @@ with st.sidebar:
 
 
 def plot():
-     fig = go.Figure([go.Scatter(x=hist.index, y=hist['Open'], 
+     fig = go.Figure([go.Scatter(x=(df.history(period="max")).index, y=(df.history(period="max"))['Open'], 
                     mode='lines', 
                     name='Open', 
                     line_color='rgb(5, 177, 59)'
                     )])
      
-     fig.add_trace(go.Scatter(x=hist.index, y=hist['Low'],
+     fig.add_trace(go.Scatter(x=(df.history(period="max")).index, y=(df.history(period="max"))['Low'],
                     mode='lines',
                     name='Low',
                     line_color='rgb(50, 30, 197)'
                     ))
-     fig.add_trace(go.Scatter(x=hist.index, y=hist['High'],
+     fig.add_trace(go.Scatter(x=(df.history(period="max")).index, y=(df.history(period="max"))['High'],
                     mode='lines',
                     name='High',
                     line_color='rgb(243, 187, 112)'
                     ))
-     fig.add_trace(go.Scatter(x=hist.index, y=hist['Close'],
+     fig.add_trace(go.Scatter(x=(df.history(period="max")).index, y=(df.history(period="max"))['Close'],
                     mode='lines',
                     name='Close',
                     line_color='rgb(193, 8, 0)'
@@ -110,7 +110,7 @@ if option:
      # st.write(df.info)
      
      # st.header(df.info[longName])
-     hist = df.history(period="max")
+     # hist = df.history(period="max")
      
      tab1, tab2 = st.tabs(["Plot", "Raw Data"])
      
