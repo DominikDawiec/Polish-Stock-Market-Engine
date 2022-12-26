@@ -88,7 +88,7 @@ def details():
      st.header("📝 Company's details")
      
      # st.write('Full name: ', str(df.info['longName']))
-     st.write('Sector: ', str(df.info['sector']))
+     st.write("Sector: ", df.info['sector'])
      st.write('Industry: ', str(df.info['industry']))
      st.write('Country: ', str(df.info['country']))
      st.write('City: ', str(df.info['city']))
@@ -102,11 +102,12 @@ def details():
 if option:
      
      st.title(option)
+     
      df =  yf.Ticker(option)
      
-     st.dataframe(df.history(period="max"))
+     # st.dataframe(df.history(period="max"))
      
-     st.write(df.info)
+     # st.write(df.info)
      
      # st.header(df.info[longName])
      hist = df.history(period="max")
