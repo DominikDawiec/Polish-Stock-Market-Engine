@@ -245,6 +245,11 @@ if option:
       
 
      with tab2:
-          st.write(model.get_params())
+          from sklearn.metrics import precision_score
+          precision = precision_score(y_true, y_pred)
+          st.write("Precision:", precision)
+          st.write("Learning rate:", model.learning_rate)
+          st.write("Numver of estimators:", model.n_estimators)
+         
      
     
