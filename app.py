@@ -118,7 +118,7 @@ if option:
           plot()
                
      with tab2:          
-          st.dataframe(hist)
+          st.dataframe((df.history(period="max")))
      
      ###################################################################### 
      
