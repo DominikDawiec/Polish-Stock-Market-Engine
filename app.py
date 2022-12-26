@@ -259,4 +259,10 @@ def save_csv():
  
     with st.expander("💾 Download Data"):
      st.header('💾 Download Data')
-     save_csv()
+     csv = df.to_csv(index=False)
+     b64 = base64.b64encode(csv.encode()).decode()  # Encode the CSV file as base64
+     href = f'<a href="data:file/csv;base64,{b64}">Download CSV file</a>'  # Create a link to download the CSV file
+     st.markdown(href, unsafe_allow_html=True)  # Display the link
+
+     # Add a button to the UI that calls the save_csv function when clicked
+     st.button("Save data as CSV")
