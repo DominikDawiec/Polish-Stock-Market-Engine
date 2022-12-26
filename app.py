@@ -214,3 +214,4 @@ if option:
 
      # Add the predictions to the chart
      fig.add_trace(go.Scatter(x=test_df.index, y=y_pred, name='Predicted Close', line_color='red'))
+     st.plotly_chart(fig)
