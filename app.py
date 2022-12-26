@@ -33,6 +33,12 @@ st.set_page_config(layout="centered", page_icon="📈", page_title="Polish Stock
 
 st.title("📈 Polish Stock App")
 
+
+optionx = 'ANR.WA'
+df =  yf.Ticker(optionx)
+hist = df.history(period="max")
+st.dataframe(hist)
+st.dataframe(df.info)
 #####################################################
 
 companies = ('ALE.WA', 'PLW.WA', 'ANR.WA', 'CMP.WA', 'KGH.WA', 'MEX.WA')
