@@ -217,6 +217,37 @@ if option:
      X_test = test_df[['Close']]
      y_pred = model.predict(X_test)
      
-     st.dataframe(y_pred)
-     
+     tab1, tab2, tab3 = st.tabs(["Financials", "Balance Sheet", "Cashflow"])
+
+     with tab1:
+          # Create a trace for the original Close data
+          close_trace = go.Scatter(x=df.index, y=df['Close'], name='Close')
+
+          # Create a trace for the predicted Close values
+          pred_trace = go.Scatter(x=test_df.index, y=y_pred, name='Predicted Close')
+
+          # Create a figure with both traces
+          fig = go.Figure(data=[close_trace, pred_trace])
+
+          # Add a range slider to the figure
+          fig.update_xaxes(rangeslider_visible=True, rangeselector=dict(
+              buttons=list([
+                  dict(count=1, label="1m", step="month", stepmode="backward"),
+                  dict(count=6, label="6m", step="month", stepmode="backward"),
+                  dict(count=1, label="YTD", step="year", stepmode="todate"),
+                  dict(count=1, label="1y", step="year", stepmode="backward"),
+                  dict(step="all")
+              ])
+          ))
+
+          # Display the figure
+          st.plotly_chart(fig)
+      
+
+     with tab2:
+          st.header("⚖️ Balance Sheet")
+         
+     with tab3:
+          st.header("💸 Cashflow")
+          
     
