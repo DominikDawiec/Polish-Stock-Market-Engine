@@ -107,7 +107,7 @@ if option:
      # st.header(df.info[longName])
      
      # def get data
-     hist=df.history(period="max")
+     # hist=df.history(period="max")
      
      ######################################################################
      
