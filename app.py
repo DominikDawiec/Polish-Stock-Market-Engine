@@ -103,8 +103,10 @@ if option:
      
      st.title(option)
      df =  yf.Ticker(option)
-     st.write(df.info)
      
+     st.dataframe(df.history(period="max"))
+     
+     st.write(df.info)
      
      # st.header(df.info[longName])
      hist = df.history(period="max")
