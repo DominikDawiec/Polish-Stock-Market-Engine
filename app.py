@@ -210,13 +210,12 @@ if option:
      model.fit(X_train, y_train)
 
      # Extend the test data by 3 months
-     import pandas as pd
-     extended_test_df = test_df.append(pd.date_range(test_df.index[-1] + pd.Timedelta(1, unit='D'), periods=3*30, freq='D').to_frame(index=True))
+     extended_test_df = pd.concat([test_df, pd.date_range(test_df.index[-1] + pd.Timedelta(1, unit='D'), periods=3*30, freq='D').to_frame(index=True)])
 
      # Make predictions on the extended test data
      X_test = extended_test_df[['Close']]
      y_pred = model.predict(X_test)
-
+     
      # Add the predictions to the chart
      fig.add_trace(go.Scatter(x=extended_test_df.index, y=y_pred, name='Predicted Close', line_color='red'))
      st.plotly_chart(fig)
