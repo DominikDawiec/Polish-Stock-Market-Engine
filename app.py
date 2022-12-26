@@ -87,15 +87,15 @@ def details():
      
      st.header("📝 Company's details")
      
-     # st.write('Full name: ', str(df.info['longName']))
-     st.write("Sector: ", df.info['sector'])
-     st.write('Industry: ', str(df.info['industry']))
-     st.write('Country: ', str(df.info['country']))
-     st.write('City: ', str(df.info['city']))
-     st.write('Address: ', str(df.info['address1']))
-     st.write('Zip: ', str(df.info['zip']))
-     st.write('Summary: ', str(df.info['longBusinessSummary']))
-     st.write('Website: ', str(df.info['website']))
+     # st.write('Full name: ', str(yf.Ticker(option).info['longName']))
+     st.write('Sector: ', str(yf.Ticker(option).info['sector']))
+     st.write('Industry: ', str(yf.Ticker(option).info['industry']))
+     st.write('Country: ', str(yf.Ticker(option).info['country']))
+     st.write('City: ', str(yf.Ticker(option).info['city']))
+     st.write('Address: ', str(yf.Ticker(option).info['address1']))
+     st.write('Zip: ', str(yf.Ticker(option).info['zip']))
+     st.write('Summary: ', str(yf.Ticker(option).info['longBusinessSummary']))
+     st.write('Website: ', str(yf.Ticker(option).info['website']))
      
 ###############################################################
 
