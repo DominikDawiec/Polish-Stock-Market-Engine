@@ -6,7 +6,7 @@ import numpy as np
 import streamlit as st
      
 import plotly.express as px
-import plotly.graph_objects as go
+# import plotly.graph_objects as go
 from plotly.offline import init_notebook_mode, iplot
 import plotly.graph_objs as go
 import plotly.io as pio
@@ -15,13 +15,13 @@ pio.templates.default = "plotly"
 from datetime import date
 
 import matplotlib.pyplot as plt
-import warnings
+# import warnings
 
 import xlsxwriter
 import io
 
 # import warnings
-warnings.filterwarnings('ignore')
+# warnings.filterwarnings('ignore')
 
 import yfinance as yf
 
@@ -39,7 +39,6 @@ companies = ('ALE.WA', 'PLW.WA', 'ANR.WA', 'CMP.WA', 'KGH.WA', 'MEX.WA')
 
 ####################################################
 
-#st.sidebar(color="#262730")
 with st.sidebar:
      option = st.selectbox('Please select company', companies)
 
@@ -47,23 +46,23 @@ with st.sidebar:
 
 
 def plot():
-     fig = go.Figure([go.Scatter(x=(df.history(period="max")).index, y=(df.history(period="max"))['Open'], 
+     fig = go.Figure([go.Scatter(x=hist.index, y=hist['Open'], 
                     mode='lines', 
                     name='Open', 
                     line_color='rgb(5, 177, 59)'
                     )])
      
-     fig.add_trace(go.Scatter(x=(df.history(period="max")).index, y=(df.history(period="max"))['Low'],
+     fig.add_trace(go.Scatter(x=hist.index, y=hist['Low'],
                     mode='lines',
                     name='Low',
                     line_color='rgb(50, 30, 197)'
                     ))
-     fig.add_trace(go.Scatter(x=(df.history(period="max")).index, y=(df.history(period="max"))['High'],
+     fig.add_trace(go.Scatter(x=hist.index, y=hist['High'],
                     mode='lines',
                     name='High',
                     line_color='rgb(243, 187, 112)'
                     ))
-     fig.add_trace(go.Scatter(x=(df.history(period="max")).index, y=(df.history(period="max"))['Close'],
+     fig.add_trace(go.Scatter(x=hist.index, y=hist['Close'],
                     mode='lines',
                     name='Close',
                     line_color='rgb(193, 8, 0)'
@@ -87,30 +86,29 @@ def details():
      
      st.header("📝 Company's details")
      
-     # st.write('Full name: ', str(yf.Ticker(option).info['longName']))
-     st.write('Sector: ', str(yf.Ticker(option).info['sector']))
-     st.write('Industry: ', str(yf.Ticker(option).info['industry']))
-     st.write('Country: ', str(yf.Ticker(option).info['country']))
-     st.write('City: ', str(yf.Ticker(option).info['city']))
-     st.write('Address: ', str(yf.Ticker(option).info['address1']))
-     st.write('Zip: ', str(yf.Ticker(option).info['zip']))
-     st.write('Summary: ', str(yf.Ticker(option).info['longBusinessSummary']))
-     st.write('Website: ', str(yf.Ticker(option).info['website']))
+     st.write('Full name: ', str(df.info['longName']))
+     st.write('Sector: ', str(df.info['sector']))
+     st.write('Industry: ', str(df.info['industry']))
+     st.write('Country: ', str(df.info['country']))
+     st.write('City: ', str(df.info['city']))
+     st.write('Address: ', str(df.info['address1']))
+     st.write('Zip: ', str(df.info['zip']))
+     st.write('Summary: ', str(df.info['longBusinessSummary']))
+     st.write('Website: ', str(df.info['website']))
      
 ###############################################################
 
 if option:
      
-     st.title(option)
-     
      df =  yf.Ticker(option)
      
-     # st.dataframe(df.history(period="max"))
+     # Setting the header
+     # st.header(df.info['longName'])
      
-     # st.write(df.info)
+     # def get data
+     hist = df.history(period="max")
      
-     # st.header(df.info[longName])
-     # hist = df.history(period="max")
+     ######################################################################
      
      tab1, tab2 = st.tabs(["Plot", "Raw Data"])
      
@@ -118,11 +116,12 @@ if option:
           plot()
                
      with tab2:          
-          st.dataframe((df.history(period="max")))
+          st.dataframe(hist)
      
      ###################################################################### 
      
      with st.expander("📝 Company's details"):
+                    
           details()
 
           
