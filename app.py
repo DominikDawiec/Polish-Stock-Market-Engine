@@ -245,8 +245,7 @@ if option:
       
 
      with tab2:
-          st.dataframe(model.get_params())
-          st.write(model.n_estimators)
+          st.write(model.get_params())
          
      
     
