@@ -121,8 +121,8 @@ if option:
         st.dataframe(df.cashflow)
 
     with st.expander("🎯 Key Performance Indicators"):
-    st.header('🎯 Key Performance Indicators')
-    kpis = [
+     st.header('🎯 Key Performance Indicators')
+     kpis = [
         ('🔴 ebitdaMargins:  ',df.info['ebitdaMargins']),
         ('🔴 profitMargins:  ',df.info['profitMargins']),
         ('🔴 operatingCashflow:  ',df.info['operatingCashflow']),
@@ -138,8 +138,8 @@ if option:
         ('🔴 enterpriseToRevenue:  ',df.info['enterpriseToRevenue']),
         ('🔴 enterpriseToEbitda:  ',df.info['enterpriseToEbitda'])
     ]
-    for name, value in kpis:
-        st.write(name, value)
+     for name, value in kpis:
+          st.write(name, value)
      
     with st.expander("📊Technical Analysis"):
      st.header('📊Technical Analysis')
