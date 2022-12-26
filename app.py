@@ -102,10 +102,10 @@ def details():
 if option:
      
      st.title(option)
-     
-     
-     
      df =  yf.Ticker(option)
+     st.write(df.info)
+     
+     
      # st.header(df.info[longName])
      hist = df.history(period="max")
      
