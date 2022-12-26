@@ -217,8 +217,6 @@ if option:
      X_test = test_df[['Close']]
      y_pred = model.predict(X_test)
      
+     st.dataframe(y_pred)
      
-     
-     # Add the predictions to the chart
-     fig.add_trace(go.Scatter(x=extended_test_df.index, y=y_pred, name='Predicted Close', line_color='red'))
-     st.plotly_chart(fig)
+    
