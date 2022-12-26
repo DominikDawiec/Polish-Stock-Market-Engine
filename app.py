@@ -98,8 +98,17 @@ def details():
      st.write('Website: ', str(df.info['website']))
      
 ###############################################################
+     
+df =  yf.Ticker(option)
+     
+# Setting the header
+# st.header(df.info[longName])
+     
+# def get data
+hist = df.history(period="max")
 
-if option:
+
+#if option:
      
      df =  yf.Ticker(option)
      
