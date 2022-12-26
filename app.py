@@ -194,3 +194,23 @@ if option:
          ])
      ))
      st.plotly_chart(fig)
+     
+    with st.expander("📊Forecast"):
+     st.header('📊Forecast')
+     # Split the data into a training set and a test set
+     train_df = df[:'2022']
+     test_df = df['2022':]
+
+     # Train a linear regression model on the training data
+     from sklearn.linear_model import LinearRegression
+     model = LinearRegression()
+     X_train = train_df[['Open', 'High', 'Low', 'Volume']]
+     y_train = train_df['Close']
+     model.fit(X_train, y_train)
+
+     # Make predictions on the test data
+     X_test = test_df[['Open', 'High', 'Low', 'Volume']]
+     y_pred = model.predict(X_test)
+
+     # Add the predictions to the chart
+     fig.add_trace(go.Scatter(x=test_df.index, y=y_pred, name='Predicted Close', line_color='red'))
