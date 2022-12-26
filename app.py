@@ -141,8 +141,8 @@ if option:
      for name, value in kpis:
           st.write(name, value)
      
-    with st.expander("📊Technical Analysis"):
-     st.header('📊Technical Analysis')
+    with st.expander("📊 Technical Analysis"):
+     st.header('📊 Technical Analysis')
      #EMA
      def RSI(df, n=14):
           close = df['Close']
@@ -195,8 +195,8 @@ if option:
      ))
      st.plotly_chart(fig)
      
-    with st.expander("📊Forecast"):
-     st.header('📊Forecast')
+    with st.expander("🤖 Forecast"):
+     st.header('🤖 Forecast')
      # Split the data into a training set and a test set
      num_months = 12
      train_df = df[:-num_months]
@@ -247,5 +247,12 @@ if option:
      with tab2:
           st.write(model.get_params())
          
-     
+          def save_csv():
+               csv = df.to_csv(index=False)
+               b64 = base64.b64encode(csv.encode()).decode()  # Encode the CSV file as base64
+               href = f'<a href="data:file/csv;base64,{b64}">Download CSV file</a>'  # Create a link to download the CSV file
+               st.markdown(href, unsafe_allow_html=True)  # Display the link
+
+               # Add a button to the UI that calls the save_csv function when clicked
+               st.button("Save data as CSV")
     
