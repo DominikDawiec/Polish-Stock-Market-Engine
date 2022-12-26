@@ -201,6 +201,10 @@ if option:
      num_months = 12
      train_df = df[:-num_months]
      test_df = df[-num_months:]
+  
+     # Remove rows with missing or invalid data
+     train_df = train_df.dropna()
+     test_df = test_df.dropna()
 
      # Train a linear regression model on the training data
      from sklearn.linear_model import LinearRegression
@@ -209,12 +213,11 @@ if option:
      y_train = train_df['Close']
      model.fit(X_train, y_train)
 
-     # Extend the test data by 3 months
-     extended_test_df = pd.concat([test_df, pd.date_range(test_df.index[-1] + pd.Timedelta(1, unit='D'), periods=3*30, freq='D').to_frame(index=True)])
-
-     # Make predictions on the extended test data
-     X_test = extended_test_df[['Close']]
+     # Make predictions on the test data
+     X_test = test_df[['Close']]
      y_pred = model.predict(X_test)
+     
+     
      
      # Add the predictions to the chart
      fig.add_trace(go.Scatter(x=extended_test_df.index, y=y_pred, name='Predicted Close', line_color='red'))
