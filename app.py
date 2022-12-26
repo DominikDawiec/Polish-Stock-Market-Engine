@@ -245,7 +245,7 @@ if option:
       
 
      with tab2:
-          st.write(model.learning_rate)
+          st.dataframe(model.get_params())
           st.write(model.n_estimators)
          
      
