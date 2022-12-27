@@ -4,7 +4,7 @@
 
 I created a website for advanced analysis of companies on the Polish Stock Market. The target audience should easily navigate the website analyzing the parameters they choose.
 
-To see the website, please click on the [LINK](https://dominikdawiec-polish-stock-market-engine-app-3wrwd3.streamlitapp.com/).
+To see the website, please click on the [LINK](https://dominikdawiec-polish-stock-market-engine-app-ome691.streamlit.app/).
 
 ![](pegif1.gif)
 
