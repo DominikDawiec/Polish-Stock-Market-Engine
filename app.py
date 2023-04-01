@@ -135,31 +135,17 @@ if option:
           return rsi
 
      df = hist
-     df['EMA_9'] = df['Close'].ewm(9).mean().shift()
-     df['EMA_22'] = df['Close'].ewm(22).mean().shift()
-     df['SMA_5'] = df['Close'].rolling(5).mean().shift()
-     df['SMA_10'] = df['Close'].rolling(10).mean().shift()
-     df['SMA_20'] = df['Close'].rolling(20).mean().shift()
-     df['SMA_50'] = df['Close'].rolling(50).mean().shift()
-     df['RSI'] = RSI(df).fillna(0)
-     EMA_12 = pd.Series(df['Close'].ewm(span=12, min_periods=12).mean())
-     EMA_26 = pd.Series(df['Close'].ewm(span=26, min_periods=26).mean())
-     df['MACD'] = pd.Series(EMA_12 - EMA_26)
-     df['MACD_signal'] = pd.Series(df.MACD.ewm(span=9, min_periods=9).mean())
-
-     indicators = [
-         ('EMA 9', 'EMA_9'),
-         ('EMA 22', 'EMA_22'),
-         ('SMA 5', 'SMA_5'),
-         ('SMA 10', 'SMA_10'),
-         ('SMA 20', 'SMA_20'),
-         ('SMA 50', 'SMA_50'),
-     ]
+     df['SMA50'] = df['Close'].rolling(50).mean().shift()
+     df['SMA200'] = df['Close'].rolling(200).mean().shift(
 
      fig = go.Figure()
-     for name, column in indicators:
-         fig.add_trace(go.Scatter(x=df.index, y=df[column], name=name))
-     fig.add_trace(go.Scatter(x=df.index, y=df.Close, name='Close', opacity=0.3))
+     
+     fig.add_trace(go.Scatter(x=df.index, y=df["Close"], name="Price"))
+     fig.add_trace(go.Scatter(x=df.index, y=df["SMA50"], name="50-day SMA"))
+     fig.add_trace(go.Scatter(x=df.index, y=df["SMA200"], name="200-day SMA"))
+          
+
+          
      fig.update_xaxes(rangeslider_visible=True, rangeselector=dict(
          buttons=list([
              dict(count=1, label="1m", step="month", stepmode="backward"),
