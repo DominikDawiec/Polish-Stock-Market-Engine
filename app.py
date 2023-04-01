@@ -170,14 +170,6 @@ if option:
          ])
      ))
      st.plotly_chart(fig)
-
-     
-     
-     
-     
-     
-     
-     
       
     with st.expander("📊 Buy/Sell Signals"):
      st.header('📊 Buy/Sell Signals')
@@ -192,6 +184,12 @@ if option:
      df["Position"] = df["Signal"].diff()
      buy_signals = df[df["Position"] == 1]
      sell_signals = df[df["Position"] == -1]
+     
+     current_signal = df["Signal"].tail(1).values[0]
+     if current_signal == 1:
+         st.header("Current signal: Buy")
+     else:
+         st.header("Current signal: Sell")
 
      # Create a figure with one subplot
      fig = go.Figure()
