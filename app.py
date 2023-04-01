@@ -76,7 +76,7 @@ def details():
 
     details = [
         ("Full name: ", df.info['longName']),
-        ("Sector: ", df.info['sector']),
+        #("Sector: ", df.info['sector']), #No longer supported by yfinance
         ("Industry: ", df.info['industry']),
         ("Country: ", df.info['country']),
         ("City: ", df.info['city']),
