@@ -93,7 +93,7 @@ if option:
     df = yf.Ticker(option)
 
     name = df.info['longName']
-    st.write(name)
+    st.header(name)
 
     hist = df.history(period="max")
 
@@ -105,8 +105,8 @@ if option:
     with tab2:
         st.dataframe(hist)
 
-    with st.expander("📝 Company's details"):
-        details()
+    #with st.expander("📝 Company's details"):
+        #details()
           
     with st.expander("💰 Financial Data"):
      tab1, tab2, tab3 = st.tabs(["Financials", "Balance Sheet", "Cashflow"])
