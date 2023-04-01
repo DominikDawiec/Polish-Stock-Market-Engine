@@ -205,9 +205,6 @@ if option:
      fig.add_trace(go.Scatter(x=buy_signals.index, y=df.loc[buy_signals.index, "Close"], mode="markers", marker=dict(symbol="triangle-up", size=10, color="green"), name="Buy"))
      fig.add_trace(go.Scatter(x=sell_signals.index, y=df.loc[sell_signals.index, "Close"], mode="markers", marker=dict(symbol="triangle-down", size=10, color="red"), name="Sell"))
 
-     # Set the title and legend
-     fig.update_layout(legend=dict(x=0, y=1, bgcolor="rgba(255, 255, 255, 0.5)"))
-
      fig.update_xaxes(rangeslider_visible=True, rangeselector=dict(
          buttons=list([
              dict(count=1, label="1m", step="month", stepmode="backward"),
