@@ -197,13 +197,13 @@ if option:
      fig = go.Figure()
 
      # Plot the stock price and moving averages
-     fig.add_trace(go.Scatter(x=data.index, y=data["Close"], name="Price"))
-     fig.add_trace(go.Scatter(x=data.index, y=data["SMA50"], name="50-day SMA"))
-     fig.add_trace(go.Scatter(x=data.index, y=data["SMA200"], name="200-day SMA"))
+     fig.add_trace(go.Scatter(x=df.index, y=df["Close"], name="Price"))
+     fig.add_trace(go.Scatter(x=df.index, y=df["SMA50"], name="50-day SMA"))
+     fig.add_trace(go.Scatter(x=df.index, y=df["SMA200"], name="200-day SMA"))
 
      # Plot the buy and sell signals
-     fig.add_trace(go.Scatter(x=buy_signals.index, y=data.loc[buy_signals.index, "Close"], mode="markers", marker=dict(symbol="triangle-up", size=10, color="green"), name="Buy"))
-     fig.add_trace(go.Scatter(x=sell_signals.index, y=data.loc[sell_signals.index, "Close"], mode="markers", marker=dict(symbol="triangle-down", size=10, color="red"), name="Sell"))
+     fig.add_trace(go.Scatter(x=buy_signals.index, y=df.loc[buy_signals.index, "Close"], mode="markers", marker=dict(symbol="triangle-up", size=10, color="green"), name="Buy"))
+     fig.add_trace(go.Scatter(x=sell_signals.index, y=df.loc[sell_signals.index, "Close"], mode="markers", marker=dict(symbol="triangle-down", size=10, color="red"), name="Sell"))
 
      # Set the title and legend
      fig.update_layout(title="Tesla Trading Signals", legend=dict(x=0, y=1, bgcolor="rgba(255, 255, 255, 0.5)"))
