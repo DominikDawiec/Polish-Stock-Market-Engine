@@ -140,9 +140,9 @@ if option:
 
      fig = go.Figure()
      
-     fig.add_trace(go.Scatter(x=df.index, y=df["Close"], name="Price"))
-     fig.add_trace(go.Scatter(x=df.index, y=df["SMA50"], name="50-day SMA"))
-     fig.add_trace(go.Scatter(x=df.index, y=df["SMA200"], name="200-day SMA"))
+     fig.add_trace(go.Scatter(x=hist.index, y=hist["Close"], name="Price"))
+     fig.add_trace(go.Scatter(x=hist.index, y=hist["SMA50"], name="50-day SMA"))
+     fig.add_trace(go.Scatter(x=hist.index, y=hist["SMA200"], name="200-day SMA"))
           
 
           
