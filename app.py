@@ -108,20 +108,11 @@ if option:
     with st.expander("🎯 Key Performance Indicators"):
      st.header('🎯 Key Performance Indicators')
      kpis = [
-        ('🔴 ebitdaMargins:  ',df.info['ebitdaMargins']),
-        ('🔴 profitMargins:  ',df.info['profitMargins']),
-        ('🔴 operatingCashflow:  ',df.info['operatingCashflow']),
-        ('🔴 revenueGrowth:  ',df.info['revenueGrowth']),
-        ('🔴 operatingMargins:  ',df.info['operatingMargins']),
-        ('🔴 earningsGrowth:  ',df.info['earningsGrowth']),
-        ('🔴 currentRatio:  ',df.info['currentRatio']),
-        ('🔴 returnOnAssets:  ',df.info['returnOnAssets']),
-        ('🔴 debtToEquity:  ',df.info['debtToEquity']),
-        ('🔴 returnOnEquity:  ',df.info['returnOnEquity']),
-        ('🔴 revenuePerShare:  ',df.info['revenuePerShare']),
-        ('🔴 quickRatio:  ',df.info['quickRatio']),
-        ('🔴 enterpriseToRevenue:  ',df.info['enterpriseToRevenue']),
-        ('🔴 enterpriseToEbitda:  ',df.info['enterpriseToEbitda'])
+        ('🔴 Market capitalization:  ',df.info['marketCap']),
+        ('🔴 Dividend yield:  ',df.info['trailingAnnualDividendYield']),
+        ('🔴 Price-to-earnings ratio (P/E):  ',df.info['trailingPE']),
+        ('🔴 Average analyst rating:  ',df.info['averageAnalystRating']),
+        ('🔴 Fifty-two week high/low:  ',df.info['fiftyTwoWeekRange'])
     ]
      for name, value in kpis:
           st.write(name, value)
