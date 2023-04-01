@@ -16,7 +16,7 @@ st.set_page_config(layout="centered", page_icon="📈", page_title="Polish Stock
 # display title
 st.title("📈 Polish Stock App")
 
-companies = ['11B.WA', 'ACG.WA', 'ACT.WA', 'AGO.WA', 'ALL.WA', 'ALR.WA', 'ALE.WA']
+companies = ['11B.WA', 'ACG.WA', 'AGO.WA', 'ALL.WA', 'ALR.WA', 'ALE.WA']
 
 with st.sidebar:
      option = st.selectbox('Please select company', companies)
