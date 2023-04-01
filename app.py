@@ -71,13 +71,13 @@ def plot():
           
     st.plotly_chart(fig)
      
-def details():
+def details(): #Most on the variables below are no longer supported by yfinance (April 2023)
     st.header("📝 Company's details")
 
     details = [
         ("Full name: ", df.info['longName']),
-        #("Sector: ", df.info['sector']), #No longer supported by yfinance
-        ("Industry: ", df.info['industry']),
+        ("Sector: ", df.info['sector']), 
+        ("Industry: ", df.info['industry']), 
         ("Country: ", df.info['country']),
         ("City: ", df.info['city']),
         ("Address: ", df.info['address1']),
@@ -91,6 +91,9 @@ def details():
 
 if option:
     df = yf.Ticker(option)
+
+    name = df.info['longName']
+    st.write(name)
 
     hist = df.history(period="max")
 
