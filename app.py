@@ -139,8 +139,8 @@ if option:
      df['EMA_22'] = df['Close'].ewm(22).mean().shift()
      df['SMA_5'] = df['Close'].rolling(5).mean().shift()
      df['SMA_10'] = df['Close'].rolling(10).mean().shift()
-     df['SMA_15'] = df['Close'].rolling(15).mean().shift()
-     df['SMA_30'] = df['Close'].rolling(30).mean().shift()
+     df['SMA_20'] = df['Close'].rolling(20).mean().shift()
+     df['SMA_50'] = df['Close'].rolling(50).mean().shift()
      df['RSI'] = RSI(df).fillna(0)
      EMA_12 = pd.Series(df['Close'].ewm(span=12, min_periods=12).mean())
      EMA_26 = pd.Series(df['Close'].ewm(span=26, min_periods=26).mean())
@@ -152,8 +152,8 @@ if option:
          ('EMA 22', 'EMA_22'),
          ('SMA 5', 'SMA_5'),
          ('SMA 10', 'SMA_10'),
-         ('SMA 15', 'SMA_15'),
-         ('SMA 30', 'SMA_30'),
+         ('SMA 20', 'SMA_20'),
+         ('SMA 50', 'SMA_50'),
      ]
 
      fig = go.Figure()
