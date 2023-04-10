@@ -105,7 +105,7 @@ if option:
     with st.expander("📝 Company's details"):
         details()
           
-    with st.expander("💰 Financial Data"):
+    #with st.expander("💰 Financial Data"):
      tab1, tab2, tab3 = st.tabs(["Financials", "Balance Sheet", "Cashflow"])
 
     with tab1:
