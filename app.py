@@ -106,19 +106,19 @@ if option:
         details()
           
     #with st.expander("💰 Financial Data"):
-     tab1, tab2, tab3 = st.tabs(["Financials", "Balance Sheet", "Cashflow"])
+     #tab1, tab2, tab3 = st.tabs(["Financials", "Balance Sheet", "Cashflow"])
 
-    with tab1:
-        st.header("💵 Financial Statement")
-        st.dataframe(df.financials)
+    #with tab1:
+        #st.header("💵 Financial Statement")
+        #st.dataframe(df.financials)
 
-    with tab2:
-        st.header("⚖️ Balance Sheet")
-        st.dataframe(df.balance_sheet)
+    #with tab2:
+        #st.header("⚖️ Balance Sheet")
+        #st.dataframe(df.balance_sheet)
 
-    with tab3:
-        st.header("💸 Cashflow")
-        st.dataframe(df.cashflow)
+    #with tab3:
+        #st.header("💸 Cashflow")
+        #st.dataframe(df.cashflow)
 
     with st.expander("🎯 Key Performance Indicators"):
      st.header('🎯 Key Performance Indicators')
