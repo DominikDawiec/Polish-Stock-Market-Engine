@@ -1,6 +1,6 @@
-# Polish-Stock-Market-Engine
-
 [![Streamlit App](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://dominikdawiec-polish-stock-market-engine-app-3wrwd3.streamlitapp.com/)
+
+# Polish-Stock-Market-Engine
 
 I created a website for advanced analysis of companies on the Polish Stock Market. The target audience should easily navigate the website analyzing the parameters they choose.
 
