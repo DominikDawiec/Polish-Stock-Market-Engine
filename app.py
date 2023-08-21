@@ -87,7 +87,7 @@ def technical_analysis(hist):
 
 # Main Application Logic
 
-companies = ['ALE.WA', 'PLW.WA', 'ANR.WA', 'CMP.WA', 'KGH.WA', 'MEX.WA']
+companies = ['CDR.WA', 'KER.WA', 'KGH.WA', 'ALE.WA']
 
 with st.sidebar:
     option = st.selectbox('Please select company', companies)
