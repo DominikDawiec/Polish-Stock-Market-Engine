@@ -2,13 +2,14 @@
 
 # Polish-Stock-Market-Engine
 
-I created a website for advanced analysis of companies on the Polish Stock Market. The target audience should easily navigate the website analyzing the parameters they choose.
-
-To see the website, please click on the [LINK](https://dominikdawiec-polish-stock-market-engine-app-ome691.streamlit.app/).
+I created a website for analysis of companies on the Polish Stock Market. The target audience should easily navigate the website analyzing the parameters they choose.
 
 ![](pegif1.gif)
 
 #### Project Status: [Active]
+
+## Application Link
+To access the application, please click on this link: [Polish Stock Market Engine](https://dominikdawiec-polish-stock-market-engine-app-ome691.streamlit.app/)
 
 ## Project Objective
 
