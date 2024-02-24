@@ -2,7 +2,7 @@
 
 # Polish-Stock-Market-Engine
 
-I created a website for analysis of companies on the Polish Stock Market. The target audience should easily navigate the website analyzing the parameters they choose.
+I created a website for analysis of companies on the **Polish Stock Market**. The target audience should easily navigate the website analyzing the parameters they choose.
 
 ![](pegif1.gif)
 
