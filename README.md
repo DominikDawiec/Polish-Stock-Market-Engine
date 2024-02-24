@@ -33,7 +33,7 @@ To access the application, please click on this link: [Polish Stock Market Engin
 ![](pegif2.gif)
 
 ## Getting Started
-1. You may see the result through this link 
+1. You may see the result through this [link](https://dominikdawiec-polish-stock-market-engine-app-ome691.streamlit.app/) 
 2. you can see the code in app.py
 
 ## Contact
